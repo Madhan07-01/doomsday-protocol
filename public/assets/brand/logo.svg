@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" fill="none">
+  <defs>
+    <linearGradient id="doomGreenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="50%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Badge -->
+  <rect x="4" y="8" width="492" height="104" rx="12" fill="#040705" stroke="#10261B" stroke-width="2"/>
+  <rect x="8" y="12" width="484" height="96" rx="10" stroke="#10B981" stroke-width="1.2" stroke-dasharray="8 4" stroke-opacity="0.4"/>
+  
+  <!-- Official Doom Circular Emblem Crest -->
+  <g transform="translate(16, 16)">
+    <!-- Outer Black Bezel -->
+    <circle cx="44" cy="44" r="42" fill="#040705" stroke="#000000" stroke-width="2" />
+    <!-- Outer Green Ring -->
+    <circle cx="44" cy="44" r="40" fill="none" stroke="#40673A" stroke-width="2.6" />
+    <!-- Crimson Ring -->
+    <circle cx="44" cy="44" r="37.5" fill="none" stroke="#7A2227" stroke-width="2.3" />
+    <!-- Inner Black Disc -->
+    <circle cx="44" cy="44" r="35.5" fill="#050806" />
+
+    <!-- Scaled Mask Wings -->
+    <g transform="translate(0.5, 0.5) scale(0.87)">
+      <polygon points="27.5,19.5 48.2,59.5 31.0,82.5 12.0,48.0 27.5,38.8" fill="#4A7843" stroke="#5B9352" stroke-width="0.7" stroke-linejoin="round" />
+      <polygon points="72.5,19.5 51.8,59.5 69.0,82.5 88.0,48.0 72.5,38.8" fill="#4A7843" stroke="#5B9352" stroke-width="0.7" stroke-linejoin="round" />
+      <polygon points="50,56.5 44.8,71.5 55.2,71.5" fill="#4A7843" stroke="#5B9352" stroke-width="0.7" stroke-linejoin="round" />
+    </g>
+  </g>
+
+  <!-- Title Text -->
+  <text x="122" y="58" font-family="'Impact', 'Cinzel', 'Trebuchet MS', sans-serif" font-size="44" letter-spacing="3" fill="url(#silverGrad)" font-weight="900" stroke="#000" stroke-width="1.5">DOOMSDAY</text>
+  <text x="122" y="94" font-family="'Impact', 'Cinzel', 'Trebuchet MS', sans-serif" font-size="30" letter-spacing="8" fill="url(#doomGreenGrad)" font-weight="900">PROTOCOL</text>
+  
+  <!-- Edition Badge -->
+  <rect x="375" y="32" width="105" height="24" rx="4" fill="#047857" stroke="#10B981" stroke-width="1" />
+  <text x="427" y="48" font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="#08292" text-anchor="middle" letter-spacing="2">KRATOS '26</text>
+  <text x="375" y="82" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34D399" letter-spacing="1">OPERATION D-DAY</text>
+</svg>

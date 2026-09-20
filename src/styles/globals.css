@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Corpta';
+  src: url('/fonts/Corpta.otf') format('opentype'),
+       url('/fonts/Corpta-DEMO.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --doom-bg: #06120e;
+  --doom-text: #7D9AA3;
+  --doom-outline: #427F40;
+}
+
+@layer base {
+  body {
+    background-color: #06120e !important;
+    color: #7D9AA3 !important;
+    font-family: 'Corpta', 'Outfit', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(rgba(66, 127, 64, 0.08) 1.5px, transparent 0),
+      linear-gradient(to bottom, #06120e 0%, #030a07 100%);
+    background-size: 24px 24px, 100% 100%;
+    background-attachment: fixed;
+  }
+
+  /* Custom Doom Green dark scrollbar matching #06120e and #427F40 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #06120e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #427F40;
+    border-radius: 4px;
+    border: 1px solid #7D9AA3;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7D9AA3;
+    box-shadow: 0 0 10px #427F40;
+  }
+}
+
+/* Corpta custom font utility */
+.font-corpta {
+  font-family: 'Corpta', 'Outfit', sans-serif !important;
+}
+
+/* Global text color #7D9AA3 and outline #427F40 */
+h1, h2, h3, h4, h5, h6,
+.font-comic,
+.comic-title {
+  font-family: 'Corpta', 'Impact', 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.04em;
+  color: #7D9AA3 !important;
+  -webkit-text-stroke: 1.5px #427F40;
+  paint-order: stroke fill;
+  text-shadow: 
+    -1px -1px 0 #427F40,
+     1px -1px 0 #427F40,
+    -1px  1px 0 #427F40,
+     1px  1px 0 #427F40,
+     0 0 14px rgba(66, 127, 64, 0.5);
+}
+
+p, span, button, a, div, label, input, li {
+  color: #7D9AA3;
+  -webkit-text-stroke: 0.5px #427F40;
+  paint-order: stroke fill;
+}
+
+/* Force common text utility overrides to user's #7D9AA3 with #427F40 outline */
+.text-white,
+.text-slate-100,
+.text-slate-200,
+.text-slate-300,
+.text-slate-400,
+.text-slate-500 {
+  color: #7D9AA3 !important;
+  -webkit-text-stroke: 0.5px #427F40;
+  paint-order: stroke fill;
+  text-shadow:
+    -0.5px -0.5px 0 #427F40,
+     0.5px -0.5px 0 #427F40,
+    -0.5px  0.5px 0 #427F40,
+     0.5px  0.5px 0 #427F40;
+}
+
+/* Never stroke SVG vector icons so glyphs remain crisp */
+svg, svg * {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Comic-book specific styled classes */
+.comic-panel {
+  box-shadow: 6px 6px 0px 0px #01120e;
+  border: 3px solid #427F40;
+}
+
+.comic-bubble {
+  position: relative;
+  background: #022C22;
+  border: 2px solid #427F40;
+  border-radius: 12px;
+}
+
+.comic-caption {
+  background: linear-gradient(135deg, #03241c 0%, #022C22 100%);
+  border-left: 4px solid #427F40;
+}
+
+/* Glow effects in Doom theme */
+.glow-emerald {
+  filter: drop-shadow(0 0 16px rgba(125, 154, 163, 0.6));
+}
+
+.glow-toxic {
+  filter: drop-shadow(0 0 24px rgba(66, 127, 64, 0.75));
+}
+
+.glow-green {
+  filter: drop-shadow(0 0 16px rgba(66, 127, 64, 0.5));
+}
+
+/* Atmospheric Green Smoke Generator Classes */
+.smoke-layer {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(65px);
+  will-change: transform, opacity;
+}
+
+.smoke-cloud-1 {
+  background: radial-gradient(circle, rgba(66, 127, 64, 0.18) 0%, rgba(2, 44, 34, 0.1) 45%, transparent 70%);
+}
+
+.smoke-cloud-2 {
+  background: radial-gradient(circle, rgba(125, 154, 163, 0.12) 0%, rgba(66, 127, 64, 0.08) 50%, transparent 75%);
+}
+
+.smoke-cloud-3 {
+  background: radial-gradient(circle, rgba(66, 127, 64, 0.15) 0%, rgba(2, 44, 34, 0.12) 40%, transparent 65%);
+}
+
+/* Cinematic Green Wipe Transition */
+@keyframes doomWipe {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: bottom;
+  }
+  30% {
+    transform: scaleY(1);
+    opacity: 0.9;
+    background-color: #022C22;
+    transform-origin: bottom;
+  }
+  70% {
+    transform: scaleY(1);
+    opacity: 0.9;
+    background-color: #022C22;
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+  }
+}
+
+.animate-doom-wipe {
+  animation: doomWipe 0.55s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* Energy Pulse Keyframes */
+@keyframes greenPulseRays {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-green-pulse {
+  animation: greenPulseRays 3.5s ease-in-out infinite;
+}

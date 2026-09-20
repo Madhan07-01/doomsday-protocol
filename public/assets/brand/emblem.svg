@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <!-- Subtle Latverian metallic & energy radial gradient -->
+    <radialGradient id="doomCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a120d" />
+      <stop offset="85%" stop-color="#040705" />
+      <stop offset="100%" stop-color="#020302" />
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="50" cy="50" r="49" fill="url(#greenGlow)" />
+
+  <!-- Outer Black Bezel -->
+  <circle cx="50" cy="50" r="48" fill="url(#doomCore)" stroke="#020302" stroke-width="2" />
+  
+  <!-- Outer Doom Green Ring -->
+  <circle cx="50" cy="50" r="45.5" fill="none" stroke="#40673A" stroke-width="2.6" />
+  
+  <!-- Royal Latverian Crimson Ring -->
+  <circle cx="50" cy="50" r="42.8" fill="none" stroke="#7A2227" stroke-width="2.3" />
+
+  <!-- Inner Black Field -->
+  <circle cx="50" cy="50" r="41" fill="#050806" />
+
+  <!-- Stylized Doctor Doom Mask Collar / Wings -->
+  <!-- Left Wing -->
+  <polygon points="27.5,19.5 48.2,59.5 31.0,82.5 12.0,48.0 27.5,38.8" fill="#4A7843" stroke="#5B9352" stroke-width="0.8" stroke-linejoin="round" />
+  
+  <!-- Right Wing -->
+  <polygon points="72.5,19.5 51.8,59.5 69.0,82.5 88.0,48.0 72.5,38.8" fill="#4A7843" stroke="#5B9352" stroke-width="0.8" stroke-linejoin="round" />
+  
+  <!-- Center Triangle Nose -->
+  <polygon points="50,56.5 44.8,71.5 55.2,71.5" fill="#4A7843" stroke="#5B9352" stroke-width="0.8" stroke-linejoin="round" />
+</svg>
